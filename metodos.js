@@ -1,10 +1,9 @@
-let times = () => {
-    return "Oi Pessoas, eu sou JS";
-}
-
 let div = document.getElementById("demo");
+let cont = 0;
 
-setTimeout( ()=> {
-    //console.log(times());
-    div.innerHTML = times()
-},2000 );
+let idx = setInterval(  () => {
+    cont++;
+    if (cont == 5) clearInterval(idx);
+    if (cont < 10) cont = `0${cont}`;
+    div.innerHTML = cont;
+}, 1000)
